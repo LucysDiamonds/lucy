@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os, sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6ujg*&a-lwi&g)ttjo8==tj4)790!&2lh$iw%%_fs5drx^%a@p'
+SECRET_KEY = os.environ['LUCYS_SECRET']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'lucy',
 	'USER': 'lucy',
-	'PASSWORD': '6ujg*&a-lwi&g',
+	'PASSWORD': os.environ['LUCY_DB'],
 	'PORT': '',
     }
 }
