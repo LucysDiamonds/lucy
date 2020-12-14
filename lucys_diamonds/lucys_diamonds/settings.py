@@ -81,6 +81,7 @@ DATABASES = {
         'NAME': 'lucy',
 	'USER': 'lucy',
 	'PASSWORD': os.environ['LUCY_DB'],
+	'HOST': 'localhost',
 	'PORT': '',
     }
 }
